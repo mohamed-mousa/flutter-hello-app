@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,8 +27,8 @@ class SimpleProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 10,
-          title: Text('Roger'),
+          backgroundColor: Colors.amber,
+          title: Text('App name'),
           centerTitle: true,
           leading:
               IconButton(onPressed: () {}, icon: Icon(Icons.menu, size: 22)),
@@ -35,10 +37,34 @@ class SimpleProject extends StatelessWidget {
             IconButton(onPressed: () {}, icon: Icon(Icons.search, size: 25))
           ],
         ),
-        body: Center(
-            child: Text(
-          'Hello roger',
-          style: TextStyle(fontSize: 40),
-        )));
+        body: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(0),
+                    bottomRight: Radius.circular(30),
+                    topLeft: Radius.circular(0),
+                    bottomLeft: Radius.circular(30)),
+              ),
+              child: Text(
+                'Hello roger',
+                style: TextStyle(fontSize: 30),
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.all(20),
+              child: Text(
+                'Last news', //
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ],
+        ));
   }
 }
